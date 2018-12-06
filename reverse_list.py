@@ -18,7 +18,8 @@ num = 50000
 timings = []
 for x in range(20):
     array = create_array(num)
-    timings.append(reverse_array_timing(array))
+    for x in range(100):
+        timings.append(reverse_array_timing(array))
     duration = statistics.median(timings)
     print('{}\t{}'.format(len(array), duration))
     num += 50000

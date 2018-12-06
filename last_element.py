@@ -18,7 +18,9 @@ num = 50000
 timings = []
 for x in range(20):
     array = create_array(num)
-    timings.append(last_element_timing(array))
-    duration = statistics.median(timings)
+    for x in range(100):
+        timings.append(last_element_timing(array))
+    duration = statistics.mean(timings)
+    # print(timings)
     print('{}\t{}'.format(len(array), duration))
     num += 50000
